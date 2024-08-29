@@ -20,9 +20,6 @@ function renderNotes() {
     });
 }
 
-// delNoteBtn.addEventListener("click" , function(){
-    
-// })
 
 // Add event listener for adding new notes
 addNoteBtn.addEventListener("click", function () {
@@ -64,4 +61,6 @@ miniBoxs.addEventListener("click", function (event) {
 
 // Initial render
 renderNotes();
+
+
 

@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"></head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="../imgs/removed.png" type="image/x-icon">
     <body>
     <div id="blur"  class="blur hide "></div>
     <div id="container" class="container ">
@@ -18,12 +20,11 @@
                 <input class="input" name="text" placeholder="Search..." type="search">            </div>
             <div class="mid">
                 <p class="task">Tasks</p>
-                <a href="Today.html">
-                    <div class="today">
-                        <i class="fa-solid fa-list-check"></i>
-                        <p>Today</p>
-                        <p>3</p>
-                    </div>
+                <a href="StickyWall.html">
+                    <div class="stickywall">
+                        <i class="fa-solid fa-note-sticky"></i>
+                        <p>Sticky Wall</p>
+                    </div>    
                 </a>
                 <a href="Calender.html" class="focus">
                     <div class="calender">
@@ -31,11 +32,12 @@
                         <p>Calender</p>
                     </div>    
                 </a>
-                <a href="StickyWall.html">
-                    <div class="stickywall">
-                        <i class="fa-solid fa-note-sticky"></i>
-                        <p>Sticky Wall</p>
-                    </div>    
+                <a href="Today.html">
+                    <div class="today">
+                        <i class="fa-solid fa-list-check"></i>
+                        <p>Today</p>
+                        <p>3</p>
+                    </div>
                 </a>
             </div>
             <div class="bottom">
@@ -43,10 +45,10 @@
                     <i class="fa-solid fa-sliders"></i>
                     <p>Settings</p>
                 </div>
-                <div class="logout">
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    <P>LogOut</P>
-                </div>
+                    <div class="logout">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <P>LogOut</P>
+                    </div>    
             </div>
         </div>
         <div class="main ">
@@ -79,6 +81,6 @@
             <span>Save</span>
         </button>
             </div>
-    <script src="../main.js" ></script>
+    <script src="../JS/calender.js" ></script>
 </body>
 </html>

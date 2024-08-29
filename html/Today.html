@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="shortcut icon" href="../imgs/removed.png" type="image/x-icon">
 </head>
 <body>
     <div id="blur"  class="blur hide "></div>
@@ -19,12 +21,11 @@
                 <input class="input" name="text" placeholder="Search..." type="search">            </div>
             <div class="mid">
                 <p class="task">Tasks</p>
-                <a href="Today.html" class="focus">
-                    <div class="today">
-                        <i class="fa-solid fa-list-check"></i>
-                        <p>Today</p>
-                        <p>3</p>
-                    </div>
+                <a href="StickyWall.html">
+                    <div class="stickywall">
+                        <i class="fa-solid fa-note-sticky"></i>
+                        <p>Sticky Wall</p>
+                    </div>    
                 </a>
                 <a href="Calender.html">
                     <div class="calender">
@@ -32,11 +33,12 @@
                         <p>Calender</p>
                     </div>    
                 </a>
-                <a href="StickyWall.html">
-                    <div class="stickywall">
-                        <i class="fa-solid fa-note-sticky"></i>
-                        <p>Sticky Wall</p>
-                    </div>    
+                <a href="Today.html" class="focus">
+                    <div class="today">
+                        <i class="fa-solid fa-list-check"></i>
+                        <p>Today</p>
+                        <p>3</p>
+                    </div>
                 </a>
             </div>
             <div class="bottom">
@@ -44,18 +46,18 @@
                     <i class="fa-solid fa-sliders"></i>
                     <p>Settings</p>
                 </div>
-                <div class="logout">
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    <P>LogOut</P>
-                </div>
+                    <div class="logout">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <P>LogOut</P>
+                    </div>    
             </div>
         </div>
         <div class="main today ">
             <h1>Today</h1>
             <div class="mini">
                 <div class="tasks">
-                    <div class="task">
-                        <div class="checkbox-wrapper">
+                    <div id="task"  class="task">
+                        <!-- <div class="checkbox-wrapper">
                             <input style="display: none;" type="checkbox" id="cbx" class="inp-cbx" />
                             <label for="cbx" class="cbx">
                             <span>
@@ -63,32 +65,21 @@
                                     <polyline points="1 5 4 8 11 1"></polyline>
                                 </svg>
                             </span>
-                            <span class="taskP" >This Is Your First Task</span>
+                            <span id="taskP" class="taskP" >This Is Your First Task</span>
                             </label>
-                        </div>
-                        <div class="checkbox-wrapper">
-                            <input style="display: none;" type="checkbox" id="cbx" class="inp-cbx" />
-                            <label for="cbx" class="cbx">
-                            <span>
-                                <svg viewBox="0 0 12 9" height="9px" width="12px">
-                                    <polyline points="1 5 4 8 11 1"></polyline>
-                                </svg>
-                            </span>
-                            <span class="taskP" >This Is Your First Task</span>
-                            </label>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="add">
-                    <i id="addPlus" class="fa-solid fa-plus"></i>
+                    <i id="addTaskPlus" class="fa-solid fa-plus"></i>
                 </div>    
             </div>
         </div>
     </div>
     <div id="addNew"  class="addNew hide ">
         <h2>Add New Task</h2>
-        <input id="input" type="text" placeholder="Task" >
-        <button id="addBtn" >
+        <input id="inputTask" type="text" placeholder="Task" >
+        <button id="addBtn" class="addTaskBtn" >
             <div class="svg-wrapper-1">
             <div class="svg-wrapper">
             <svg
@@ -107,6 +98,7 @@
             <span>Save</span>
         </button>
             </div>
-    <script src="../main.js" ></script>
+    <script src="../JS/TodayTask.js" ></script>
+    <script src="../JS/calender.js" ></script>
 </body>
 </html>
