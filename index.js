@@ -1,12 +1,11 @@
 
-
 // Signup Functionality
 document.getElementById('signup').addEventListener('click', function (event) {
     event.preventDefault();
     let name = document.getElementById('signUpName').value;
     let email = document.getElementById('signUpEmail').value;
     let password = document.getElementById('signUpPass').value;
-
+    
     if (name && email && password) {
         // Get existing users from localStorage or initialize an empty array
         let users = JSON.parse(localStorage.getItem('users')) || [];
