@@ -8,6 +8,7 @@ let delNoteBtn = document.getElementById("delNote");
 let input = document.getElementById("input");
 let textArea = document.getElementById("textarea");
 let colorArr = ["#FDF2B3", "#D1EAED", "#FFDADA", "#a2e6dd", "#FFD4A9", "#f5bfbf", "#a7f0c7", "#adf0a7", "#d4f0a7", "#ebf0a7", "#f0cea7", "#a7c7f0", "#a7a8f0", "#b7a7f0", "#cfa7f0", "#f0a7e0", "#f0a7b3"];
+let editNoteBtn = document.querySelector(".editNote")
 
 let noteArr = JSON.parse(localStorage.getItem("NoteArr")) || []; // Load from local storage
 
@@ -20,6 +21,9 @@ function renderNotes() {
     });
 }
 
+editNoteBtn.addEventListener("click" , function(){
+    console.log("shit")
+})
 
 // Add event listener for adding new notes
 addNoteBtn.addEventListener("click", function () {
@@ -32,6 +36,7 @@ createNoteBtn.onclick = function () {
     if (textArea.value && input.value) {
         let noteHTML = `
         <div class="box" style="background-color : ${colorArr[randColor]} ;" >
+        <i id="editNote"  class="fa-regular fa-pen-to-square"></i>
             <h3>${input.value}</h3>
             <p>${textArea.value}</p>
             <i id="delNote" class="fa-regular fa-trash-can"></i>

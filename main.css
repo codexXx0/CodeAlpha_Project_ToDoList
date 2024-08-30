@@ -192,6 +192,16 @@ a:hover {
                 color: red;
                 cursor: pointer;
             }
+            #editNote {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                height: fit-content;
+            }
+            #editNote:hover {
+                cursor: pointer;
+                color: #3c53c7;
+            }
         }
         .add {
             font-size: 50px;
@@ -418,7 +428,6 @@ a:hover {
     }
 }
 
-
 .today {
     h1 {
         margin-bottom: 30px;
@@ -437,4 +446,116 @@ a:hover {
             }
         }
     } 
+}
+
+@media (max-width:500px) {
+    .bar {
+        min-width:75px;
+        position: sticky;
+        .top {
+            input {
+                box-shadow: 0 0 7px 0 rgb(173, 173, 173);
+            }
+        }
+        h2 {
+            font-size: 19px;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        .mid {
+            .stickywall {
+                justify-content: center;
+            }
+            .calender {
+                justify-content: center;
+            }
+            .today {
+                justify-content: center;
+            }
+            i {
+                font-size: 17px;
+                margin-bottom: 10px;
+            }
+            p {
+                display: none;
+            }
+        }
+        .bottom {
+            width: calc(100% - 40px);
+            box-sizing: border-box;
+            .settings ,
+            .logout {
+                justify-content: center;
+                width: 100%;
+            }
+            i{
+                font-size: 17px;
+            }
+            p {
+                display: none;
+            }
+        }
+    }
+    .main {
+        .mini {
+            .boxs {
+                .box {
+                    width: 150px;
+                    height: 160px;
+                    padding: 15px;
+                    box-sizing: border-box;
+                    border-radius: 5px;
+                    overflow-wrap: break-word;
+                    position: relative;
+                    overflow-y: auto;
+                    h3 {
+                        font-size: 17px;
+                    }
+                    p {
+                        padding-bottom: 10px;
+                        padding-right: 15px;
+                    }
+                    #editNote {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                    }
+                    #delNote {
+                        position: absolute;
+                        right: 10px;
+                        bottom: 10px;
+                        /* bottom: 20px;
+                        transform: translateX(110px) translateY(20px);
+                        padding-bottom: 10px; */
+                        transition: 0.2s ease-in-out;
+                        }
+                }
+            }
+            .add {
+                position: fixed;
+                width: 75px;
+                height: 50px;
+                box-shadow: 0 0 15px 0 rgb(151, 151, 151);
+            }        
+        }
+    }
+    #addPlus {
+        font-size: 24px;
+    }
+    .addNew {
+        width: 300px;
+        left: calc(50% - 150px);
+        top: calc(50% - 150px);    
+    }
+}
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #a3131300;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(158, 158, 158, 0.651); 
+    border-radius: 10px;
+    cursor:grab ;
 }
