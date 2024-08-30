@@ -17,33 +17,21 @@
             <h1>Codex</h1>
             <img src="imgs/51819c0566eb155d5f90f9d4967da4ee.jpg" alt="">
         </div>
-        <div class="wrapper">
-                <div class="card-switch">
-                    <label class="switch">
-                        <input type="checkbox" class="toggle">
-                        <span class="slider"></span>
-                        <span class="card-side"></span>
-                        <div class="flip-card__inner">
-                            <div class="flip-card__front">
-                                <div class="title">Log in</div>
-                                <form class="flip-card__form" action="html/StickyWall.html">
-                                <input id="loginEmail" class="flip-card__input" name="email" placeholder="Email" type="email">
-                                <input id="loginPass" class="flip-card__input" name="password" placeholder="Password" type="password">
-                                <button id="login" class="flip-card__btn">Let`s go!</button>
-                                </form>
-                            </div>
-                            <div class="flip-card__back">
-                                <div class="title">Sign up</div>
-                                <form class="flip-card__form" action="">
-                                <input id="signUpName" class="flip-card__input" placeholder="Name" type="name">
-                                <input id="signUpEmail" class="flip-card__input" name="email" placeholder="Email" type="email">
-                                <input  id="signUpPass" class="flip-card__input" name="password" placeholder="Password" type="password">
-                                <button id="signup" class="flip-card__btn">Confirm!</button>
-                                </form>
-                            </div>
-                        </div>
-                    </label>
-                </div>   
+            <div class="page">
+                <form  class="form">
+                    <p class="heading">Login</p>
+                    <input id="loginEmail" class="input" placeholder="Email" type="email">
+                    <input id="loginPass" class="input" placeholder="Password" type="password"> 
+                    <button id="login" class="btn">Login</button>
+                    <!-- <button id="goSignUp" class="btn">Register</button> -->
+                </form>
+                <form  class="form  ">
+                    <p class="heading">SignUp</p>
+                    <input id="signUpName" class="input" placeholder="Username" type="text">
+                    <input id="signUpEmail" class="input" placeholder="email" type="email">
+                    <input id="signUpPass" class="input" placeholder="Password" type="password"> 
+                    <button id="signup" class="btn">SignUp</button>
+                </form>        
             </div>
             <script src="index.js" ></script>
     </body>

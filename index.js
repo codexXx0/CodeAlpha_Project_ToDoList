@@ -1,3 +1,5 @@
+
+
 // Signup Functionality
 document.getElementById('signup').addEventListener('click', function (event) {
     event.preventDefault();
@@ -48,3 +50,10 @@ document.getElementById('login').addEventListener('click', function (event) {
         swal("Watch Out!", "Invalid email or password.", "error");
     }
 });
+
+document.getElementById("goSignUp").onclick = function() {
+    document.getElementById('signup').classList.remove("hide")
+    document.getElementById('login').classList.add("hide")
+    
+    // event.preventDefault();
+}
