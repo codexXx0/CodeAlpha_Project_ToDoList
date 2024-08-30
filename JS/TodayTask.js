@@ -16,9 +16,23 @@ document.addEventListener("DOMContentLoaded", renderTask); // Ensure tasks are r
 
 function renderTask() {
     taskPage.innerHTML = ''; // Clear the task page content first
-    taskArr.forEach(taskHTML => {
-        taskPage.innerHTML += taskHTML;
+    taskArr.forEach(taskObj => {
+        taskPage.innerHTML += taskObj.taskHTML;
     });
+
+    // Reapply checked status after rendering tasks
+    taskArr.forEach((taskObj, index) => {
+        let checkbox = document.getElementById(`cbx-${index}`);
+        if (checkbox) {
+            checkbox.checked = taskObj.isChecked; // Set the checked status
+            checkbox.addEventListener('change', () => handleCheckboxChange(index)); // Add event listener
+        }
+    });
+}
+
+function handleCheckboxChange(taskIndex) {
+    taskArr[taskIndex].isChecked = !taskArr[taskIndex].isChecked; // Toggle the checked status
+    localStorage.setItem("TaskArr", JSON.stringify(taskArr)); // Update local storage
 }
 
 newTaskBtn.addEventListener("click", function () {
@@ -41,9 +55,10 @@ addTaskBtn.onclick = function () {
                 </span>
                 <span id="taskP" class="taskP">${inputTask.value}</span>
                 </label>
-            </div>
+                <i id="delNote" class="fa-regular fa-trash-can"></i>
+                </div>
         `;
-        taskArr.push(taskHTML);
+        taskArr.push({ taskHTML, isChecked: false }); // Store task HTML and initial checked status
         localStorage.setItem("TaskArr", JSON.stringify(taskArr)); // Save to local storage
         renderTask(); // Render updated tasks
         inputTask.value = "";
@@ -52,3 +67,17 @@ addTaskBtn.onclick = function () {
     createTaskPage.classList.add("hide");
 };
 
+// Event delegation for deleting a task
+taskPage.addEventListener("click", function (event) {
+    if (event.target.classList.contains("fa-trash-can")) {
+        let taskToDelete = event.target.parentElement;
+        let taskIndex = Array.from(taskPage.children).indexOf(taskToDelete);
+
+        // Remove the task from the array
+        taskArr.splice(taskIndex, 1);
+        localStorage.setItem("TaskArr", JSON.stringify(taskArr)); // Update local storage
+
+        // Remove the task from the DOM
+        taskToDelete.remove();
+    }
+});

@@ -334,6 +334,25 @@ a:hover {
 
 /* Today Page  */
 
+
+.checkbox-wrapper {
+    position: relative;
+    word-break: break-all;
+}
+
+.checkbox-wrapper #delNote {
+    transition: 0.2s ease-in-out;
+    /* position: absolute; */
+    right: 30px;
+    padding-left: 15px;
+    top: 15%;
+    font-size: 15px;
+}
+.checkbox-wrapper #delNote:hover {
+    cursor: pointer;
+    color: red;
+}
+
 .checkbox-wrapper .cbx {
     -webkit-user-select: none;
     user-select: none;
